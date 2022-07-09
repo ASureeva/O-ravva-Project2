@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class StatueRotation : MonoBehaviour
 {
-
+    public GameObject prompt;
     public float smooth = 95.0f;
     [SerializeField]
     private float rotationStep = 90.0f;
@@ -56,10 +56,12 @@ public class StatueRotation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isRotated = true;
+        prompt.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         isRotated = false;
+        prompt.SetActive(false);
     }
 }

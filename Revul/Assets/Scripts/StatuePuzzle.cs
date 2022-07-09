@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StatuePuzzle : MonoBehaviour
 {
+    public GameObject prompt;
+    
     public StatueRotation foxScript;
     public StatueRotation rabbitScript;
     public StatueRotation bearScript;
@@ -56,7 +58,7 @@ public class StatuePuzzle : MonoBehaviour
 
     void LiftDoor()
     {
-        animCup.SetBool("cup", true);
+        animCup.SetBool("state", true);
        // distCovered = (Time.time - startTime) * speed;
        // if (door.transform.position.y < endMarker.position.y)
         //{
@@ -75,5 +77,6 @@ public class StatuePuzzle : MonoBehaviour
         rabbitScript.isRotated = false;
         foxScript.isRotated = false;
         bearScript.isRotated = false;
+        prompt.SetActive(false);
     }
 }
