@@ -11,20 +11,14 @@ public class Action2 : MonoBehaviour
     public GameObject telegraph;
     public GameObject telegraphR;
 
-
-
     public Sprite spr;
 
     
     public Text infText1;
-    public Text tip;
+    public Text actionTxt;
 
     public bool isUsed;
-    public bool isUsedAgain1;
-
-
-
-
+    public bool isUsedAgain;
 
     private void Update()
     {
@@ -33,24 +27,21 @@ public class Action2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        infText1.text = "Я могу применить предмет ";
-        if (other.tag == "Player")
-            infText.SetActive(true);
+        infText1.text = "Чего-то в нем не хватает";
+        actionTxt.text = "Прям как Тесла!";
         isUsed = true;
-
-        
+        if (other.tag == "Player" & isUsedAgain == false)
+            infText.SetActive(true);        
     }
 
     private void OnTriggerStay(Collider other)
     {
-
-        if ((Input.GetKeyDown(KeyCode.Alpha2) & isUsed == true) & img.GetComponent<Image>().sprite == spr )
+        if ((Input.GetKeyDown(KeyCode.Alpha2) & isUsed == true) & img.GetComponent<Image>().sprite == spr & isUsedAgain == false )
         {
             actionText.SetActive(true);
             telegraph.SetActive(false);
             telegraphR.SetActive(true);
-            isUsedAgain1 = true;
+            isUsedAgain = true;
         }
     }
 

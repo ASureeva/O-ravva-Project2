@@ -14,6 +14,7 @@ public class Action1 : MonoBehaviour
 
     
     public Text infText1;
+    public Text actiontxt;
 
     public bool isUsed;
     public bool isUsedAgain;
@@ -22,7 +23,7 @@ public class Action1 : MonoBehaviour
 
 
 
-
+    // For optimization
     private void Update()
     {
         OnTriggerStay(GetComponent<Collider>());
@@ -31,18 +32,20 @@ public class Action1 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        infText1.text = "Я могу применить предмет ";
-        if (other.tag == "Player")
-            infText.SetActive(true);
-        isUsed = true;
+        infText1.text = "Эта дверь не выглядит прочной";
+        actiontxt.text = "При союзе было лучше";
 
-        
+        if (other.tag == "Player" & isUsedAgain == false)
+        {
+            infText.SetActive(true);
+            isUsed = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
 
-        if ((Input.GetKeyDown(KeyCode.Alpha1) & isUsed == true) & img.GetComponent<Image>().sprite == spr )
+        if ((Input.GetKeyDown(KeyCode.Alpha1) & isUsed == true) & img.GetComponent<Image>().sprite == spr & isUsedAgain == false )
         {
             actionText.SetActive(true);
             isUsedAgain = true;
@@ -50,11 +53,11 @@ public class Action1 : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    {
+    { 
         infText.SetActive(false);
         actionText.SetActive(false);
         isUsed = false;
-        
+         
     }
 
 

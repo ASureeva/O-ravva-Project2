@@ -7,13 +7,12 @@ using UnityEngine.UI;
 public class ShowText : MonoBehaviour
 {
     public GameObject textInf;
-    public Text txt;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
             textInf.SetActive(true);
-            txt.text = " Нажмите F, что бы подобрать предмет ";
+           textInf.GetComponent<Text>().text = " Нажмите F, что бы подобрать предмет ";
     }
 
     private void OnTriggerExit(Collider other)
@@ -26,5 +25,6 @@ public class ShowText : MonoBehaviour
     {
         if (textInf != null)
             textInf.SetActive(false);
+        
     }
 }

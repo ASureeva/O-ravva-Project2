@@ -9,7 +9,9 @@ public class MuseumAnim : MonoBehaviour
     public Animator animL;
 
     public GameObject item;
+    public GameObject txt;
     public Sprite spr;
+    
 
     public bool KeyBor;
     public bool isNear;
@@ -21,11 +23,16 @@ public class MuseumAnim : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        txt.GetComponent<Text>().text = "Он для чего-то же нужен! #@#@#@#";
         isNear = true;
+        if (other.tag == "Player" & KeyBor == false)
+            txt.SetActive(true);
+        
+        
     }
     private void OnTriggerStay(Collider other)
     {
-        if ((isNear == true) & item.GetComponent<Image>().sprite == spr)
+        if ((isNear == true) & (item.GetComponent<Image>().sprite == spr & Input.GetKeyDown(KeyCode.Alpha4)))
         {
             animL.SetBool("KeyBor", true);
             animR.SetBool("KeyBor", true);
@@ -34,5 +41,7 @@ public class MuseumAnim : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isNear = false;
+        if (other.tag == "Player" & KeyBor == false)
+            txt.SetActive(false);
     }
 }
