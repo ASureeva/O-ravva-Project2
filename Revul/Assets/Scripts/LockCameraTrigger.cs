@@ -7,6 +7,9 @@ public class LockCameraTrigger : MonoBehaviour
 {
     public bool near;
 
+    public GameObject digitLock;
+    public GameObject laptopLock;
+
     public GameObject cam;
     public bool cameraIsActive;
     public bool playerIsActive = true; 
@@ -33,6 +36,8 @@ public class LockCameraTrigger : MonoBehaviour
                 cam.SetActive(false);
                 player.SetActive(true);
                 GetComponent<BoxCollider>().enabled = false;
+                laptopLock.SetActive(true);
+                digitLock.SetActive(false);
             }
         }
         else if (near && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))

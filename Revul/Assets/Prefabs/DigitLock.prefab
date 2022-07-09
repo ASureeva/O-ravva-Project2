@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 8395802243382998808}
   - component: {fileID: 8395802243382998809}
   - component: {fileID: 8395802243382998810}
-  - component: {fileID: 8955502786949221499}
-  - component: {fileID: 7176878680183020029}
+  - component: {fileID: 115026553}
   m_Layer: 5
   m_Name: DigitLock
   m_TagString: Untagged
@@ -117,7 +116,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8955502786949221499
+--- !u!114 &115026553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 543216042980657211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa102f5d5d7379541a067c323fb8eee4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5762232f678002e4ab5dd39ed2213257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button1: {fileID: 8395802243554227901}
@@ -146,35 +145,7 @@ MonoBehaviour:
   Lid: {fileID: 0}
   wasSolved: 0
   openDoorSound: {fileID: 0}
---- !u!114 &7176878680183020029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543216042980657211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa102f5d5d7379541a067c323fb8eee4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button1: {fileID: 8395802243554227901}
-  button2: {fileID: 8395802243222231986}
-  button3: {fileID: 8395802243371710582}
-  button4: {fileID: 8395802242910610800}
-  button5: {fileID: 8395802242571147839}
-  button6: {fileID: 8395802243451398779}
-  button7: {fileID: 8395802242797089083}
-  button8: {fileID: 8395802243258470720}
-  button9: {fileID: 8395802243258058540}
-  buttonAsterisk: {fileID: 8395802243685937979}
-  button0: {fileID: 8395802243926489444}
-  buttonHash: {fileID: 8395802242127430807}
-  codeText: {fileID: 8395802242660576730}
-  properKey: 2908
-  Lid: {fileID: 0}
-  wasSolved: 0
-  openDoorSound: {fileID: 0}
+  roll: {fileID: 0}
 --- !u!1 &1646069478135410058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,8 +3356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8395802243569926631}
   - component: {fileID: 8395802243569926629}
-  - component: {fileID: 8955502787192051331}
-  - component: {fileID: 2713868646923656626}
+  - component: {fileID: 1438371201}
   m_Layer: 0
   m_Name: Triger For Digit Lock
   m_TagString: Untagged
@@ -3421,7 +3391,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8955502787192051331
+--- !u!114 &1438371201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3430,35 +3400,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8395802243569926632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5726f53b77010964780f2b6d3a937d33, type: 3}
+  m_Script: {fileID: 11500000, guid: 813dfe2e78958654e9f354707099d995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   near: 0
   cam: {fileID: 1646069478135410058}
   cameraIsActive: 0
   playerIsActive: 1
-  lockPuzzle: {fileID: 8955502786949221499}
-  prompt: {fileID: 0}
-  player: {fileID: 0}
-  frame: 0
-  cursorIsVisible: 0
---- !u!114 &2713868646923656626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8395802243569926632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5726f53b77010964780f2b6d3a937d33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  near: 0
-  cam: {fileID: 1646069478135410058}
-  cameraIsActive: 0
-  playerIsActive: 1
-  lockPuzzle: {fileID: 7176878680183020029}
+  lockPuzzle: {fileID: 0}
   prompt: {fileID: 0}
   player: {fileID: 0}
   frame: 0

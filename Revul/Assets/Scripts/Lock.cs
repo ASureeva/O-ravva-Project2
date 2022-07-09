@@ -176,4 +176,3 @@ public class Lock : MonoBehaviour
         AddDigit("#");
     }
 }
-

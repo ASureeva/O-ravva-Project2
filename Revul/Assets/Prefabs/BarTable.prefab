@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2400559156485337760}
   - component: {fileID: 824066391328092335}
   - component: {fileID: 3209759548460106853}
+  - component: {fileID: 5206757810597458185}
   m_Layer: 0
   m_Name: BarTable
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5206757810597458185
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319402626235331484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7629742839734130783, guid: a4af0c8718745d442b262680b59a6d73, type: 3}
