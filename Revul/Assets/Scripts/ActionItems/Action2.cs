@@ -45,6 +45,7 @@ public class Action2 : MonoBehaviour
         }
         else if(other.tag == "Player" & isUsedThird == false)
         {
+            actionText.GetComponent<Text>().text = "Осталось записать книгу";
             actionText.SetActive(true);
         }
     }
