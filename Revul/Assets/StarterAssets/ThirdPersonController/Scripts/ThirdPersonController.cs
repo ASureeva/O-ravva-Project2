@@ -109,6 +109,7 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        public bool cursorIsVisible;
 
         private bool IsCurrentDeviceMouse
         {
@@ -150,6 +151,7 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+            cursorIsVisible = false;
         }
 
         private void Update()

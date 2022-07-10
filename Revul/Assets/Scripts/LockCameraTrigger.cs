@@ -17,7 +17,7 @@ public class LockCameraTrigger : MonoBehaviour
     public GameObject prompt;
     public GameObject player;
     public int frame = 0;
-    public bool cursorIsVisible;
+    public GameObject pause;
 
     void Start()
     {
@@ -36,24 +36,31 @@ public class LockCameraTrigger : MonoBehaviour
                 cam.SetActive(false);
                 player.SetActive(true);
                 GetComponent<BoxCollider>().enabled = false;
-                laptopLock.SetActive(true);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                pause.SetActive(true);
                 digitLock.SetActive(false);
             }
         }
-        else if (near && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
+        
+        else if (near && Input.GetKeyDown(KeyCode.F))
         {
-            cameraIsActive = !cameraIsActive;
-            cursorIsVisible = cameraIsActive;
-            if (lockPuzzle.wasSolved)
-            {
-                cursorIsVisible = false;
-            }
-            cam.SetActive(cameraIsActive);
-
-            playerIsActive = !playerIsActive;
-            player.SetActive(playerIsActive);
-            
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            cam.SetActive(true);
+            player.SetActive(false);
             prompt.SetActive(false);
+            pause.SetActive(false);
+
+        }
+
+        else if (near && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            cam.SetActive(false);
+            player.SetActive(true);
+            pause.SetActive(true);
         }
     }
 

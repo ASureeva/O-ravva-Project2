@@ -27,10 +27,12 @@ public class PipePuzzle : MonoBehaviour
 	public GameObject _wall;
 	public GameObject _person;
 	public GameObject _camera;
+	public GameObject laptopLock;
+	public GameObject pause;
+
 
 	public int _sceneNumber;
 	public bool result;
-	public bool cursorIsVisible;
 
 
 	// Start is called before the first frame update
@@ -72,11 +74,14 @@ public class PipePuzzle : MonoBehaviour
 		    result = true;
 		    //NextLevel(_sceneNumber);
 		    animPipe.SetBool("state", true);
-		    cursorIsVisible = false;
+		    Cursor.visible = false;
+		    Cursor.lockState = CursorLockMode.Locked;
 		    _camera.SetActive(false);
 		    _person.SetActive(true);
 		    _wall.SetActive(false);
 		    _collider.SetActive(false);
+		    laptopLock.SetActive(true);
+		    pause.SetActive(true);
 
 	    }
 

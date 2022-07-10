@@ -11,8 +11,9 @@ public class Pipe : MonoBehaviour
     public GameObject _camera;
 
     public GameObject prompt;
-    public bool cursorIsVisible;
-    
+    public PipePuzzle pipePuzzle;
+    public GameObject pause;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +23,24 @@ public class Pipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRotated && Input.GetKeyDown(KeyCode.F))
+       if (isRotated && Input.GetKeyDown(KeyCode.F))
         {
-            cursorIsVisible = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             _camera.SetActive(true);
             _person.SetActive(false);
             prompt.SetActive(false);
+            pause.SetActive(false);
 
         }
 
         if (isRotated && Input.GetKeyDown(KeyCode.Escape))
         {
-            cursorIsVisible = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             _camera.SetActive(false);
             _person.SetActive(true);
+            pause.SetActive(true);
         }
     }
     private void OnTriggerEnter(Collider other)
