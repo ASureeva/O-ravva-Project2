@@ -15,6 +15,7 @@ public class LockCameraLapTop : MonoBehaviour
     public GameObject player;
     public int frame = 0;
     public GameObject pause;
+    public GameObject actionText;
 
     void Start()
     {
@@ -62,12 +63,14 @@ public class LockCameraLapTop : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         near = true;
+        actionText.SetActive(true);
         prompt.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         near = false;
+        actionText.SetActive(false);
         prompt.SetActive(false);
     }
 }

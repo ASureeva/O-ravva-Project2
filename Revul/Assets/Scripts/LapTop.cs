@@ -54,6 +54,7 @@ public class LapTop : MonoBehaviour
     public GameObject book;
     public GameObject cam;
     public GameObject player;
+    
     public bool cursorIsVisible;
     
 
@@ -108,7 +109,7 @@ public class LapTop : MonoBehaviour
             //openDoorSound.Play();
             wasSolved = true;
             OpenDoor();
-            book.SetActive(true);
+            book.SetActive(true);            
         }
 
         if (_currentText.Length >= 6)

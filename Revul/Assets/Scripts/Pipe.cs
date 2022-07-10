@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pipe : MonoBehaviour
 {
     public bool isRotated;
+    public bool WrenchUsed;
 
+    // For first use.
+    public GameObject InfText;
+    public GameObject wrench;
+    public Sprite item3;
+
+    
     public GameObject _person;
     public GameObject _camera;
 
@@ -23,8 +31,10 @@ public class Pipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (isRotated && Input.GetKeyDown(KeyCode.F))
-        {
+        OnTriggerStay(GetComponent<Collider>());
+
+       if (isRotated & Input.GetKeyDown(KeyCode.F) & WrenchUsed == true)
+        {            
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             _camera.SetActive(true);
@@ -34,7 +44,7 @@ public class Pipe : MonoBehaviour
 
         }
 
-        if (isRotated && Input.GetKeyDown(KeyCode.Escape))
+        if (isRotated & Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -43,15 +53,32 @@ public class Pipe : MonoBehaviour
             pause.SetActive(true);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (WrenchUsed == false & Input.GetKeyDown(KeyCode.Alpha3) & wrench.GetComponent<Image>().sprite == item3)
+        {
+            WrenchUsed = true;
+            InfText.SetActive(false);
+            prompt.SetActive(true);
+        }
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         isRotated = true;
-        prompt.SetActive(true);
+        if (WrenchUsed == false)
+        {
+            InfText.GetComponent<Text>().text = "It's me Mario!";
+            InfText.SetActive(true);            
+        }
+        else prompt.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         isRotated = false;
         prompt.SetActive(false);
+        InfText.SetActive(false);
     }
 }
